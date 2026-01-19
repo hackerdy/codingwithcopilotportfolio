@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A brief description of your portfolio, highlighting your skills and projects.">
+    <meta name="theme-color" content="#667eea">
+    <meta name="author" content="Your Name">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23667eea' width='100' height='100'/><text x='50' y='75' font-size='80' font-weight='bold' fill='white' text-anchor='middle'>P</text></svg>">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Your Portfolio Title</title>
+</head>
+<body>
+    <!-- Skip to content link for keyboard navigation -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header>
+        <h1>Welcome to My Website</h1>
+        <button id="hamburger-menu" class="hamburger-menu" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="about-me" id="main-content">
+            <h2>About Me</h2>
+            <p>Hello! I am a web developer with a passion for creating interactive and user-friendly websites. I enjoy learning new technologies and improving my skills.</p>
+        </section>
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="design">Design</button>
+            </div>
+            <div class="projects-container">
+                <article class="project-card" data-category="web">
+                    <h3>Project Title 1</h3>
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop" alt="Web development with laptop and code editor" class="lightbox-trigger" style="cursor: pointer;">
+                        <figcaption>Description of Project 1.</figcaption>
+                    </figure>
+                </article>
+                <article class="project-card" data-category="mobile">
+                    <h3>Project Title 2</h3>
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=500&h=300&fit=crop" alt="Mobile app development on smartphone screen" class="lightbox-trigger" style="cursor: pointer;">
+                        <figcaption>Description of Project 2.</figcaption>
+                    </figure>
+                </article>
+                <article class="project-card" data-category="design">
+                    <h3>Project Title 3</h3>
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&h=300&fit=crop" alt="Graphic design and UI/UX design workspace" class="lightbox-trigger" style="cursor: pointer;">
+                        <figcaption>Description of Project 3.</figcaption>
+                    </figure>
+                </article>
+            </div>
+        </section>
+        <section id="skills">
+            <h2>My Skills</h2>
+            <ul>
+                <li>HTML & CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node.js</li>
+                <li>Git & GitHub</li>
+                <li>Responsive Design</li>
+                <li>API Integration</li>
+                <li>Problem Solving</li>
+            </ul>
+        </section>
+        <article>
+            <h2>Article Title</h2>
+            <p>This is a paragraph in the article.</p>
+        </article>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="Name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="Email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="Message" rows="4" required></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+        </section>
+        
+    </main>
+    <footer>
+        <p>&copy; 2026 My Website</p>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close">&times;</span>
+            <img id="lightbox-image" src="" alt="">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

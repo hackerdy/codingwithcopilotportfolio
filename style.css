@@ -1,0 +1,869 @@
+/* ============================================
+   STEP 3: BASIC STYLES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ============================================
+   SKIP LINK FOR ACCESSIBILITY
+   ============================================ */
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background-color: #667eea;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* ============================================
+   STEP 4: HEADER AND NAVIGATION STYLES
+   ============================================ */
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+nav ul {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+nav ul li a:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* ============================================
+   HAMBURGER MENU STYLES
+   ============================================ */
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    z-index: 101;
+}
+
+.hamburger-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ============================================
+   STEP 4: MAIN CONTENT AND SECTIONS
+   ============================================ */
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+section {
+    margin-bottom: 3rem;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    font-size: 2rem;
+    color: #667eea;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid #764ba2;
+    padding-bottom: 0.5rem;
+}
+
+/* ============================================
+   STEP 4: ABOUT ME SECTION
+   ============================================ */
+
+.about-me {
+    text-align: center;
+}
+
+.about-me h2 {
+    margin-bottom: 1.5rem;
+}
+
+.about-me p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ============================================
+   STEP 4: PROJECTS SECTION (CARD LAYOUT)
+   ============================================ */
+
+#projects {
+    padding: 2rem;
+}
+
+.filter-buttons {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: #f0f4ff;
+    color: #667eea;
+    border: 2px solid #667eea;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.filter-btn:hover {
+    background-color: #667eea;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background-color: #667eea;
+    color: white;
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.4);
+}
+
+.projects-container {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+#projects article,
+.project-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    flex: 1 1 calc(33.333% - 1.5rem);
+    min-width: 250px;
+}
+
+.project-card {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#projects article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+#projects h3 {
+    font-size: 1.5rem;
+    color: #764ba2;
+    margin-bottom: 1rem;
+}
+
+#projects figure {
+    margin: 0 0 1rem 0;
+}
+
+#projects img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    display: block;
+}
+
+/* ============================================
+   LIGHTBOX MODAL STYLES
+   ============================================ */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.lightbox.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+#lightbox-image {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    max-height: 600px;
+    border-radius: 8px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    z-index: 1001;
+    transition: all 0.3s ease;
+}
+
+.lightbox-close:hover {
+    transform: scale(1.2);
+}
+
+#projects figcaption {
+    font-size: 0.95rem;
+    color: #666;
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+/* ============================================
+   STEP 4: SKILLS SECTION WITH PSEUDO-ELEMENTS
+   ============================================ */
+
+#skills ul {
+    list-style: none;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#skills li {
+    background-color: #f0f4ff;
+    color: #667eea;
+    padding: 0.75rem 1.25rem;
+    border-radius: 20px;
+    font-weight: 500;
+    border: 2px solid #667eea;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+#skills li::before {
+    content: "✓";
+    position: absolute;
+    left: 0.75rem;
+    font-weight: bold;
+    color: #764ba2;
+    font-size: 1.25rem;
+}
+
+#skills li:hover {
+    background-color: #667eea;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* ============================================
+   STEP 4: CONTACT FORM STYLES
+   ============================================ */
+
+#contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#contact label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+#contact button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+#contact button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+}
+
+#contact button:active {
+    transform: translateY(0);
+}
+
+#contact button:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* ============================================
+   FORM VALIDATION FEEDBACK STYLES
+   ============================================ */
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input.error,
+.form-group textarea.error {
+    border-color: #e74c3c;
+    background-color: #fadbd8;
+}
+
+.form-group input.success,
+.form-group textarea.success {
+    border-color: #27ae60;
+    background-color: #d5f4e6;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+.success-message {
+    color: #27ae60;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    display: none;
+}
+
+.success-message.show {
+    display: block;
+}
+
+/* ============================================
+   FOOTER STYLES
+   ============================================ */
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ============================================
+   STEP 5: RESPONSIVE DESIGN - MEDIA QUERIES
+   ============================================ */
+
+/* Tablet breakpoint: 768px and down */
+@media (max-width: 768px) {
+    
+    .hamburger-menu {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: flex;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0 1rem 1rem;
+    }
+
+    header h1 {
+        font-size: 1.75rem;
+        margin-bottom: 0;
+        flex-grow: 1;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        z-index: 99;
+        width: 100%;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        text-align: center;
+        padding: 0.75rem;
+    }
+
+    main {
+        padding: 1rem 0.5rem;
+    }
+
+    section {
+        padding: 1.5rem 1rem;
+        margin-bottom: 2rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    .about-me p {
+        font-size: 1rem;
+    }
+
+    .projects-container {
+        flex-direction: column;
+    }
+
+    .project-card {
+        flex: 1 1 100%;
+        min-width: 100%;
+    }
+
+    #projects article {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    #projects h3 {
+        font-size: 1.25rem;
+    }
+
+    .filter-buttons {
+        gap: 0.75rem;
+    }
+
+    .filter-btn {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+    }
+
+    #skills ul {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    #skills li {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem 0.6rem 2rem;
+    }
+
+    #contact form {
+        padding: 0 1rem;
+    }
+
+}
+
+/* Mobile breakpoint: 480px and down */
+@media (max-width: 480px) {
+
+    header {
+        padding: 1rem 0;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    nav ul {
+        gap: 0;
+    }
+
+    nav ul li a {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    main {
+        padding: 0.5rem;
+    }
+
+    section {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    section h2 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .about-me p {
+        font-size: 0.95rem;
+    }
+
+    #projects article {
+        padding: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    #projects h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    #skills ul {
+        gap: 0.5rem;
+    }
+
+    #skills li {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.75rem 0.5rem 1.75rem;
+    }
+
+    #skills li::before {
+        left: 0.5rem;
+        font-size: 1rem;
+    }
+
+    #contact label {
+        margin-top: 0.75rem;
+        margin-bottom: 0.25rem;
+        font-size: 0.95rem;
+    }
+
+    #contact input,
+    #contact textarea {
+        padding: 0.6rem;
+        margin-bottom: 0.75rem;
+        font-size: 16px;
+    }
+
+    #contact button {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    footer {
+        padding: 1.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+}
+
+/* ============================================
+   STEP 6: VENDOR PREFIXES & CROSS-BROWSER
+   ============================================ */
+
+/* Flexbox vendor prefixes (already included above) */
+
+/* Gradient vendor prefixes */
+header {
+    background: -webkit-linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: -moz-linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+#contact button {
+    background: -webkit-linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: -moz-linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Transform vendor prefixes */
+#projects article:hover {
+    -webkit-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+#skills li:hover {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+nav ul li a:hover {
+    -webkit-transform: translateY(-2px);
+    -moz-transform: translateY(-2px);
+    transform: translateY(-2px);
+}
+
+#contact button:hover {
+    -webkit-transform: translateY(-2px);
+    -moz-transform: translateY(-2px);
+    transform: translateY(-2px);
+}
+
+/* Transition vendor prefixes */
+nav ul li a {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#projects article {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#skills li {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#contact input,
+#contact textarea {
+    -webkit-transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    -moz-transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact button {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+/* Box-shadow vendor prefixes (for older browsers) */
+header {
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#projects article:hover {
+    -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* User select for better UX */
+nav ul li a {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+/* Appearance for cross-browser consistency */
+#contact button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Smooth scrolling fallback for older browsers */
+@supports (scroll-behavior: smooth) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* ============================================
+   KEYFRAME ANIMATIONS
+   ============================================ */
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+        -webkit-transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
+}
+
+@-moz-keyframes fadeIn {
+    from {
+        opacity: 0;
+        -moz-transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        -moz-transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
